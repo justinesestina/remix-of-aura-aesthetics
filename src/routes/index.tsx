@@ -146,7 +146,7 @@ function ProceduresPreview() {
 
       <div className="mt-16 grid gap-x-8 gap-y-14 sm:grid-cols-2 lg:grid-cols-4">
         {featured.map((p, i) => (
-          <Reveal key={p.slug} delay={i * 80} className={i % 2 === 1 ? "lg:mt-16" : undefined}>
+          <Reveal key={p.slug} delay={i * 80} className={i % 2 === 1 ? "lg:mt-16" : ""}>
             <Link to="/procedures/$slug" params={{ slug: p.slug }} className="group block">
               <div className="relative aspect-[3/4] overflow-hidden bg-beige">
                 <img
