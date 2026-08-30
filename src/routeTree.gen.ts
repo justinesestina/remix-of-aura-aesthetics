@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as ProceduresIndexRouteImport } from './routes/procedures.index'
+import { Route as ProceduresSlugRouteImport } from './routes/procedures.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -28,34 +29,43 @@ const ProceduresIndexRoute = ProceduresIndexRouteImport.update({
   path: '/procedures/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ProceduresSlugRoute = ProceduresSlugRouteImport.update({
+  id: '/procedures/$slug',
+  path: '/procedures/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/procedures/$slug': typeof ProceduresSlugRoute
   '/procedures/': typeof ProceduresIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/procedures/$slug': typeof ProceduresSlugRoute
   '/procedures': typeof ProceduresIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/procedures/$slug': typeof ProceduresSlugRoute
   '/procedures/': typeof ProceduresIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/procedures/'
+  fullPaths: '/' | '/about' | '/procedures/$slug' | '/procedures/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/procedures'
-  id: '__root__' | '/' | '/about' | '/procedures/'
+  to: '/' | '/about' | '/procedures/$slug' | '/procedures'
+  id: '__root__' | '/' | '/about' | '/procedures/$slug' | '/procedures/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  ProceduresSlugRoute: typeof ProceduresSlugRoute
   ProceduresIndexRoute: typeof ProceduresIndexRoute
 }
 
@@ -82,12 +92,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ProceduresIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/procedures/$slug': {
+      id: '/procedures/$slug'
+      path: '/procedures/$slug'
+      fullPath: '/procedures/$slug'
+      preLoaderRoute: typeof ProceduresSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  ProceduresSlugRoute: ProceduresSlugRoute,
   ProceduresIndexRoute: ProceduresIndexRoute,
 }
 export const routeTree = rootRouteImport
