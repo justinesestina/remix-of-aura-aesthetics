@@ -16,6 +16,7 @@ import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as ProceduresIndexRouteImport } from './routes/procedures.index'
 import { Route as ProceduresSlugRouteImport } from './routes/procedures.$slug'
 import { Route as ResourcesIndexRouteImport } from './routes/resources.index'
+import { Route as ResourcesSlugRouteImport } from './routes/resources.$slug'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -52,6 +53,11 @@ const ResourcesIndexRoute = ResourcesIndexRouteImport.update({
   path: '/resources/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ResourcesSlugRoute = ResourcesSlugRouteImport.update({
+  id: '/resources/$slug',
+  path: '/resources/$slug',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -59,6 +65,7 @@ export interface FileRoutesByFullPath {
   '/gallery': typeof GalleryRoute
   '/testimonials': typeof TestimonialsRoute
   '/procedures/$slug': typeof ProceduresSlugRoute
+  '/resources/$slug': typeof ResourcesSlugRoute
   '/procedures/': typeof ProceduresIndexRoute
   '/resources/': typeof ResourcesIndexRoute
 }
@@ -68,6 +75,7 @@ export interface FileRoutesByTo {
   '/gallery': typeof GalleryRoute
   '/testimonials': typeof TestimonialsRoute
   '/procedures/$slug': typeof ProceduresSlugRoute
+  '/resources/$slug': typeof ResourcesSlugRoute
   '/procedures': typeof ProceduresIndexRoute
   '/resources': typeof ResourcesIndexRoute
 }
@@ -78,6 +86,7 @@ export interface FileRoutesById {
   '/gallery': typeof GalleryRoute
   '/testimonials': typeof TestimonialsRoute
   '/procedures/$slug': typeof ProceduresSlugRoute
+  '/resources/$slug': typeof ResourcesSlugRoute
   '/procedures/': typeof ProceduresIndexRoute
   '/resources/': typeof ResourcesIndexRoute
 }
@@ -89,6 +98,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/testimonials'
     | '/procedures/$slug'
+    | '/resources/$slug'
     | '/procedures/'
     | '/resources/'
   fileRoutesByTo: FileRoutesByTo
@@ -98,6 +108,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/testimonials'
     | '/procedures/$slug'
+    | '/resources/$slug'
     | '/procedures'
     | '/resources'
   id:
@@ -107,6 +118,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/testimonials'
     | '/procedures/$slug'
+    | '/resources/$slug'
     | '/procedures/'
     | '/resources/'
   fileRoutesById: FileRoutesById
@@ -117,6 +129,7 @@ export interface RootRouteChildren {
   GalleryRoute: typeof GalleryRoute
   TestimonialsRoute: typeof TestimonialsRoute
   ProceduresSlugRoute: typeof ProceduresSlugRoute
+  ResourcesSlugRoute: typeof ResourcesSlugRoute
   ProceduresIndexRoute: typeof ProceduresIndexRoute
   ResourcesIndexRoute: typeof ResourcesIndexRoute
 }
@@ -172,6 +185,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResourcesIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/resources/$slug': {
+      id: '/resources/$slug'
+      path: '/resources/$slug'
+      fullPath: '/resources/$slug'
+      preLoaderRoute: typeof ResourcesSlugRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
@@ -181,6 +201,7 @@ const rootRouteChildren: RootRouteChildren = {
   GalleryRoute: GalleryRoute,
   TestimonialsRoute: TestimonialsRoute,
   ProceduresSlugRoute: ProceduresSlugRoute,
+  ResourcesSlugRoute: ResourcesSlugRoute,
   ProceduresIndexRoute: ProceduresIndexRoute,
   ResourcesIndexRoute: ResourcesIndexRoute,
 }
