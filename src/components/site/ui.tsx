@@ -8,10 +8,10 @@ const base =
   "group/btn inline-flex items-center justify-center gap-3 text-[0.7rem] uppercase tracking-[0.22em] font-normal transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] px-8 py-4 min-h-11 rounded-none";
 
 const variants = {
-  solid: "bg-charcoal text-ivory hover:px-10 hover:bg-charcoal/90",
-  outline: "border border-charcoal/25 text-charcoal hover:border-charcoal hover:px-10",
-  light: "border border-ivory/40 text-ivory hover:border-ivory hover:px-10",
-  ghost: "px-0 py-2 text-charcoal hover:text-gold",
+  solid: "bg-brown text-cream hover:px-10 hover:bg-brown/90",
+  outline: "border border-brown/25 text-brown hover:border-brown hover:px-10",
+  light: "border border-cream/40 text-cream hover:border-cream hover:px-10",
+  ghost: "px-0 py-2 text-brown hover:text-gold",
 } as const;
 
 type Variant = keyof typeof variants;
@@ -139,7 +139,7 @@ export function PageHero({
   intro?: string;
 }) {
   return (
-    <header className="border-b border-border bg-sand px-6 pb-20 pt-40 md:px-10 md:pb-28 md:pt-48 lg:px-16">
+    <header className="border-b border-border bg-white px-6 pb-20 pt-40 md:px-10 md:pb-28 md:pt-48 lg:px-16">
       <div className="mx-auto w-full max-w-[86rem]">
         <Reveal>
           <Eyebrow>{eyebrow}</Eyebrow>

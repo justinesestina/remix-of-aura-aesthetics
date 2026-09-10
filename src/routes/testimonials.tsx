@@ -29,21 +29,21 @@ function TestimonialsPage() {
         title={
           <>
             Experiences,
-            <span className="italic text-stone"> in their words</span>
+            <span className="italic text-light-brown"> in their words</span>
           </>
         }
         intro="Reflections shared with permission and anonymised. Testimonials describe individual experiences and are not a prediction of results."
       />
 
-      <Section className="bg-ivory">
+      <Section className="bg-cream">
         <div className="grid gap-x-16 gap-y-16 md:grid-cols-2">
           {testimonials.map((t, i) => (
             <Reveal key={t.initials} delay={(i % 2) * 90} className={i % 2 === 1 ? "md:mt-16" : ""}>
               <figure className="border-t border-border pt-9">
-                <span aria-hidden className="font-display text-5xl leading-none text-beige">
+                <span aria-hidden className="font-display text-5xl leading-none text-cream">
                   &ldquo;
                 </span>
-                <blockquote className="mt-4 font-display text-[1.65rem] leading-[1.5] text-charcoal">
+                <blockquote className="mt-4 font-display text-[1.65rem] leading-[1.5] text-brown">
                   {t.quote}
                 </blockquote>
                 <figcaption className="eyebrow mt-7">
@@ -55,7 +55,7 @@ function TestimonialsPage() {
         </div>
       </Section>
 
-      <Section className="bg-sand">
+      <Section className="bg-white">
         <SectionHeading
           eyebrow="What Care Looks Like"
           title="The same process, for everyone"
@@ -63,8 +63,8 @@ function TestimonialsPage() {
         />
         <ol className="mt-14 grid gap-px overflow-hidden border border-border bg-border md:grid-cols-2 lg:grid-cols-5">
           {carePath.map((s, i) => (
-            <Reveal key={s.step} as="li" delay={i * 60} className="bg-sand p-8">
-              <span className="font-display text-3xl text-beige">{s.step}</span>
+            <Reveal key={s.step} as="li" delay={i * 60} className="bg-white p-8">
+              <span className="font-display text-3xl text-cream">{s.step}</span>
               <h3 className="mt-5 text-xl leading-tight">{s.title}</h3>
               <p className="mt-3 text-sm leading-[1.9] text-muted-foreground">{s.body}</p>
             </Reveal>

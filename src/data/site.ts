@@ -1,40 +1,35 @@
-import heroPortrait from "@/assets/hero-portrait.jpg";
-import surgeonPortrait from "@/assets/surgeon-portrait.jpg";
-import clinicInterior from "@/assets/clinic-interior.jpg";
-import procFace from "@/assets/procedure-face.jpg";
-import procBreast from "@/assets/procedure-breast.jpg";
-import procBody from "@/assets/procedure-body.jpg";
-import procNonSurgical from "@/assets/procedure-nonsurgical.jpg";
-import coverAsset from "@/assets/cover.png.asset.json";
-import doctorHeroAsset from "@/assets/doctor-hero.png.asset.json";
-import bannerAsset from "@/assets/image.png.asset.json";
-import servicesAsset from "@/assets/sevices.png.asset.json";
-import services1Asset from "@/assets/services1.png.asset.json";
-import services2Asset from "@/assets/services2.png.asset.json";
-import services3Asset from "@/assets/services3.png.asset.json";
-import services4Asset from "@/assets/services4.png.asset.json";
-import services5Asset from "@/assets/services5.png.asset.json";
+import doctorHero from "@/assets/doctor-hero.png";
+import cover from "@/assets/cover.png";
+import logo from "@/assets/logo.png";
+import services from "@/assets/sevices.png";
+import services1 from "@/assets/services1.png";
+import services2 from "@/assets/services2.png";
+import services3 from "@/assets/services3.png";
+import services4 from "@/assets/services4.png";
+import services5 from "@/assets/services5.png";
+
+export { logo };
 
 export const images = {
-  heroPortrait: doctorHeroAsset.url,
-  surgeonPortrait: coverAsset.url,
-  clinicInterior,
-  doctorCutout: doctorHeroAsset.url,
-  doctorBanner: coverAsset.url,
-  profileBanner: bannerAsset.url,
-  signatureTreatments: servicesAsset.url,
-  face: procFace,
-  breast: procBreast,
-  body: procBody,
-  nonsurgical: procNonSurgical,
+  heroPortrait: doctorHero,
+  surgeonPortrait: cover,
+  clinicInterior: cover,
+  doctorCutout: doctorHero,
+  doctorBanner: cover,
+  profileBanner: cover,
+  signatureTreatments: services,
+  face: doctorHero,
+  breast: cover,
+  body: cover,
+  nonsurgical: doctorHero,
 };
 
 export const treatmentPosters = [
-  { title: "Skin Boosters", image: services1Asset.url },
-  { title: "Botox Treatments", image: services2Asset.url },
-  { title: "Surgical Procedures", image: services3Asset.url },
-  { title: "Premium Skin Boosters", image: services4Asset.url },
-  { title: "Mesolipo", image: services5Asset.url },
+  { title: "Skin Boosters", image: services1 },
+  { title: "Botox Treatments", image: services2 },
+  { title: "Surgical Procedures", image: services3 },
+  { title: "Premium Skin Boosters", image: services4 },
+  { title: "Mesolipo", image: services5 },
 ];
 
 export const clinicLocations = [
@@ -120,7 +115,7 @@ export const procedures: Procedure[] = [
     excerpt:
       "Refinement of nasal proportion and structure, planned around facial balance and breathing function.",
     recovery: "[Typical recovery placeholder]",
-    image: procFace,
+    image: images.face,
     overview: [
       "Rhinoplasty addresses the shape, proportion and structural support of the nose. Planning begins with an assessment of facial balance, skin quality and nasal function.",
       "The surgical approach is selected individually. Some patients require structural support, others a conservative refinement. " + baseFaqNote,
@@ -153,7 +148,7 @@ export const procedures: Procedure[] = [
     excerpt:
       "Repositioning of facial tissue to address laxity along the mid-face, jawline and neck.",
     recovery: "[Typical recovery placeholder]",
-    image: procFace,
+    image: images.face,
     overview: [
       "A facelift repositions deeper facial tissue rather than relying on skin tension alone, with the aim of a natural-looking, rested appearance.",
       baseFaqNote,
@@ -186,7 +181,7 @@ export const procedures: Procedure[] = [
     excerpt:
       "Conservative treatment of upper or lower eyelid heaviness, planned around the natural eye shape.",
     recovery: "[Typical recovery placeholder]",
-    image: procFace,
+    image: images.face,
     overview: [
       "Eyelid surgery addresses excess skin or heaviness around the eyes. Conservative planning helps preserve the natural shape and expression of the eye.",
       baseFaqNote,
@@ -219,7 +214,7 @@ export const procedures: Procedure[] = [
     excerpt:
       "Volume and proportion planning using implants or fat transfer, guided by anatomy and preference.",
     recovery: "[Typical recovery placeholder]",
-    image: procBreast,
+    image: images.breast,
     overview: [
       "Breast augmentation is planned around chest measurements, tissue quality and personal preference. Options and trade-offs are reviewed in consultation.",
       baseFaqNote,
@@ -252,7 +247,7 @@ export const procedures: Procedure[] = [
     excerpt:
       "Reshaping and repositioning of breast tissue, with scar patterns selected individually.",
     recovery: "[Typical recovery placeholder]",
-    image: procBreast,
+    image: images.breast,
     overview: [
       "A breast lift repositions tissue and the nipple-areola complex. Scar pattern is chosen according to anatomy and the degree of change required.",
       baseFaqNote,
@@ -285,7 +280,7 @@ export const procedures: Procedure[] = [
     excerpt:
       "Targeted contouring of localised fat deposits in patients at or near a stable weight.",
     recovery: "[Typical recovery placeholder]",
-    image: procBody,
+    image: images.body,
     overview: [
       "Liposuction refines contour in specific areas. It is a contouring procedure rather than a treatment for weight management.",
       baseFaqNote,
@@ -318,7 +313,7 @@ export const procedures: Procedure[] = [
     excerpt:
       "Restoration of abdominal contour, often following pregnancy or significant weight change.",
     recovery: "[Typical recovery placeholder]",
-    image: procBody,
+    image: images.body,
     overview: [
       "Abdominoplasty addresses excess skin and, where indicated, separation of the abdominal muscles. Planning includes scar placement and recovery support.",
       baseFaqNote,
@@ -351,7 +346,7 @@ export const procedures: Procedure[] = [
     excerpt:
       "Conservative, medically supervised injectable treatments for balance and skin quality.",
     recovery: "[Typical recovery placeholder]",
-    image: procNonSurgical,
+    image: images.nonsurgical,
     overview: [
       "Non-surgical treatments are used selectively, either as an alternative to surgery or alongside a broader plan. Conservative dosing supports natural-looking outcomes.",
       baseFaqNote,
@@ -419,14 +414,14 @@ export type GalleryCase = {
 };
 
 export const galleryCases: GalleryCase[] = [
-  { id: "case-01", procedure: "Rhinoplasty", category: "Face", image: procFace, caseInfo: "Patient in their 20s. [Case detail placeholder]." },
-  { id: "case-02", procedure: "Breast Augmentation", category: "Breast", image: procBreast, caseInfo: "Patient in their 30s. [Case detail placeholder]." },
-  { id: "case-03", procedure: "Abdominoplasty", category: "Body", image: procBody, caseInfo: "Patient in their 40s. [Case detail placeholder]." },
-  { id: "case-04", procedure: "Injectable Treatments", category: "Non-Surgical", image: procNonSurgical, caseInfo: "Patient in their 30s. [Case detail placeholder]." },
+  { id: "case-01", procedure: "Rhinoplasty", category: "Face", image: images.face, caseInfo: "Patient in their 20s. [Case detail placeholder]." },
+  { id: "case-02", procedure: "Breast Augmentation", category: "Breast", image: images.breast, caseInfo: "Patient in their 30s. [Case detail placeholder]." },
+  { id: "case-03", procedure: "Abdominoplasty", category: "Body", image: images.body, caseInfo: "Patient in their 40s. [Case detail placeholder]." },
+  { id: "case-04", procedure: "Injectable Treatments", category: "Non-Surgical", image: images.nonsurgical, caseInfo: "Patient in their 30s. [Case detail placeholder]." },
   { id: "case-05", procedure: "Facelift", category: "Face", image: images.heroPortrait, caseInfo: "Patient in their 50s. [Case detail placeholder]." },
-  { id: "case-06", procedure: "Breast Lift", category: "Breast", image: procBreast, caseInfo: "Patient in their 40s. [Case detail placeholder]." },
-  { id: "case-07", procedure: "Liposuction", category: "Body", image: procBody, caseInfo: "Patient in their 30s. [Case detail placeholder]." },
-  { id: "case-08", procedure: "Eyelid Surgery", category: "Face", image: procFace, caseInfo: "Patient in their 50s. [Case detail placeholder]." },
+  { id: "case-06", procedure: "Breast Lift", category: "Breast", image: images.breast, caseInfo: "Patient in their 40s. [Case detail placeholder]." },
+  { id: "case-07", procedure: "Liposuction", category: "Body", image: images.body, caseInfo: "Patient in their 30s. [Case detail placeholder]." },
+  { id: "case-08", procedure: "Eyelid Surgery", category: "Face", image: images.face, caseInfo: "Patient in their 50s. [Case detail placeholder]." },
 ];
 
 export const galleryDisclaimer =
@@ -481,7 +476,7 @@ export const posts: Post[] = [
       "What to bring, what to ask, and how to make the most of an initial conversation with a surgeon.",
     date: "March 2026",
     author: clinic.surgeon.name,
-    image: clinicInterior,
+    image: images.clinicInterior,
     body: [
       {
         heading: "Before the appointment",
@@ -507,7 +502,7 @@ export const posts: Post[] = [
       "Recovery is not an afterthought. It is planned alongside the procedure, with defined milestones and support.",
     date: "February 2026",
     author: clinic.surgeon.name,
-    image: procBody,
+    image: images.body,
     body: [
       {
         heading: "A planned phase",
@@ -526,7 +521,7 @@ export const posts: Post[] = [
       "Why skin health is assessed before any surgical or non-surgical plan is considered.",
     date: "January 2026",
     author: clinic.surgeon.name,
-    image: procNonSurgical,
+    image: images.nonsurgical,
     body: [
       {
         heading: "Assessment first",
@@ -544,7 +539,7 @@ export const posts: Post[] = [
     excerpt: "A quieter, more private space designed around the consultation itself.",
     date: "January 2026",
     author: clinic.shortName,
-    image: clinicInterior,
+    image: images.clinicInterior,
     body: [
       {
         heading: "A considered environment",

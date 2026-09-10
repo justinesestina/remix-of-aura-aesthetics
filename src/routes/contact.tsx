@@ -26,7 +26,7 @@ export const Route = createFileRoute("/contact")({
   component: ContactPage,
 });
 
-const fieldClass = "mt-3 rounded-none border-input bg-ivory h-12";
+const fieldClass = "mt-3 rounded-none border-input bg-cream h-12";
 
 function ContactPage() {
   const [sent, setSent] = useState(false);
@@ -46,13 +46,13 @@ function ContactPage() {
         title={
           <>
             Begin with a
-            <span className="italic text-stone"> conversation</span>
+            <span className="italic text-light-brown"> conversation</span>
           </>
         }
         intro="Consultations are private and without obligation. Share as much or as little as you'd like below."
       />
 
-      <Section className="bg-ivory">
+      <Section className="bg-cream">
         <div className="grid gap-16 lg:grid-cols-[1.1fr_0.9fr] lg:gap-24">
           <Reveal>
             <Eyebrow>Consultation Request</Eyebrow>
@@ -89,7 +89,7 @@ function ContactPage() {
                 <select
                   id="procedure"
                   name="procedure"
-                  className="mt-3 h-12 w-full border border-input bg-ivory px-3 text-sm text-foreground"
+                  className="mt-3 h-12 w-full border border-input bg-cream px-3 text-sm text-foreground"
                   defaultValue=""
                 >
                   <option value="">Not sure yet</option>
@@ -108,7 +108,7 @@ function ContactPage() {
                   id="message"
                   name="message"
                   rows={6}
-                  className="mt-3 rounded-none border-input bg-ivory"
+                  className="mt-3 rounded-none border-input bg-cream"
                 />
               </div>
               <div className="sm:col-span-2 flex flex-wrap items-center gap-6">
@@ -129,7 +129,7 @@ function ContactPage() {
           </Reveal>
 
           <div className="space-y-10">
-            <Reveal className="border border-border bg-sand p-9">
+            <Reveal className="border border-border bg-white p-9">
               <Eyebrow>Clinic</Eyebrow>
               <ul className="mt-7 space-y-4 text-sm">
                 <li>
@@ -168,7 +168,7 @@ function ContactPage() {
             </Reveal>
 
             <Reveal delay={140} variant="clip">
-              <div className="aspect-[4/3] overflow-hidden bg-beige">
+              <div className="aspect-[4/3] overflow-hidden bg-cream">
                 <img
                   src={images.clinicInterior}
                   alt="The clinic reception and consultation suite"

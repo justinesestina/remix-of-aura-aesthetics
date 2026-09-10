@@ -18,18 +18,18 @@ const columns = [
 
 export function Footer() {
   return (
-    <footer className="border-t border-border bg-charcoal text-ivory">
+    <footer className="border-t border-border bg-brown text-cream">
       <div className="mx-auto w-full max-w-[86rem] px-6 py-20 md:px-10 md:py-28 lg:px-16">
         <div className="grid gap-14 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
           <div>
             <p className="font-display text-xl tracking-[0.3em]">{clinic.name}</p>
-            <p className="mt-6 max-w-xs text-sm leading-[1.9] text-ivory/60">{clinic.description}</p>
+            <p className="mt-6 max-w-xs text-sm leading-[1.9] text-cream/60">{clinic.description}</p>
             <ul className="mt-8 flex gap-6">
               {clinic.social.map((s) => (
                 <li key={s.label}>
                   <a
                     href={s.href}
-                    className="text-[0.68rem] uppercase tracking-[0.2em] text-ivory/60 transition-colors hover:text-gold"
+                    className="text-[0.68rem] uppercase tracking-[0.2em] text-cream/60 transition-colors hover:text-gold"
                   >
                     {s.label}
                   </a>
@@ -40,13 +40,13 @@ export function Footer() {
 
           {columns.map((col) => (
             <nav key={col.title} aria-label={col.title}>
-              <Eyebrow className="text-ivory/50">{col.title}</Eyebrow>
+              <Eyebrow className="text-cream/50">{col.title}</Eyebrow>
               <ul className="mt-7 space-y-3">
                 {col.links.map((l) => (
                   <li key={l.to}>
                     <Link
                       to={l.to}
-                      className="text-sm text-ivory/70 transition-colors hover:text-gold"
+                      className="text-sm text-cream/70 transition-colors hover:text-gold"
                     >
                       {l.label}
                     </Link>
@@ -57,14 +57,14 @@ export function Footer() {
           ))}
 
           <nav aria-label="Procedures">
-            <Eyebrow className="text-ivory/50">Procedures</Eyebrow>
+            <Eyebrow className="text-cream/50">Procedures</Eyebrow>
             <ul className="mt-7 space-y-3">
               {categories.map((c) => (
                 <li key={c}>
                   <Link
                     to="/procedures"
                     search={{ category: c }}
-                    className="text-sm text-ivory/70 transition-colors hover:text-gold"
+                    className="text-sm text-cream/70 transition-colors hover:text-gold"
                   >
                     {c}
                   </Link>
@@ -74,8 +74,8 @@ export function Footer() {
           </nav>
 
           <div>
-            <Eyebrow className="text-ivory/50">Contact</Eyebrow>
-            <ul className="mt-7 space-y-3 text-sm text-ivory/70">
+            <Eyebrow className="text-cream/50">Contact</Eyebrow>
+            <ul className="mt-7 space-y-3 text-sm text-cream/70">
               <li>
                 <a href={clinic.phoneHref} className="transition-colors hover:text-gold">
                   {clinic.phoneLabel}
@@ -95,7 +95,7 @@ export function Footer() {
               </li>
               <li className="pt-2">
                 {clinic.hours.map((h) => (
-                  <span key={h.day} className="block text-ivory/55">
+                  <span key={h.day} className="block text-cream/55">
                     {h.day} — {h.time}
                   </span>
                 ))}
@@ -106,12 +106,12 @@ export function Footer() {
 
         <p
           aria-hidden
-          className="mt-20 select-none border-t border-ivory/10 pt-10 font-display text-[clamp(2.4rem,11vw,9rem)] leading-none tracking-[0.06em] text-ivory/10"
+          className="mt-20 select-none border-t border-cream/10 pt-10 font-display text-[clamp(2.4rem,11vw,9rem)] leading-none tracking-[0.06em] text-cream/10"
         >
           {clinic.name}
         </p>
 
-        <div className="mt-10 flex flex-col gap-5 border-t border-ivory/10 pt-8 text-[0.68rem] uppercase tracking-[0.18em] text-ivory/45 md:flex-row md:items-center md:justify-between">
+        <div className="mt-10 flex flex-col gap-5 border-t border-cream/10 pt-8 text-[0.68rem] uppercase tracking-[0.18em] text-cream/45 md:flex-row md:items-center md:justify-between">
           <p>
             © {new Date().getFullYear()} {clinic.shortName}. All rights reserved.
           </p>

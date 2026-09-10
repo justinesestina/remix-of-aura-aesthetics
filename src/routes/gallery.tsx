@@ -36,13 +36,13 @@ function GalleryPage() {
         title={
           <>
             Results, shown
-            <span className="italic text-stone"> with context</span>
+            <span className="italic text-light-brown"> with context</span>
           </>
         }
         intro="Imagery is presented for education, with case detail rather than promotion. Individual results vary."
       />
 
-      <Section className="bg-ivory">
+      <Section className="bg-cream">
         <Reveal className="flex flex-wrap gap-3 border-b border-border pb-8">
           {(["All", ...categories] as const).map((c) => (
             <ActionButton
@@ -52,7 +52,7 @@ function GalleryPage() {
               aria-pressed={filter === c}
               className={cn(
                 "px-6 py-3 hover:px-6",
-                filter === c && "border-charcoal bg-charcoal text-ivory",
+                filter === c && "border-brown bg-brown text-cream",
               )}
             >
               {c}
@@ -68,14 +68,14 @@ function GalleryPage() {
                 onClick={() => setActive(c)}
                 className="group block w-full text-left"
               >
-                <div className="relative aspect-[4/5] overflow-hidden bg-beige">
+                <div className="relative aspect-[4/5] overflow-hidden bg-cream">
                   <img
                     src={c.image}
                     alt={`${c.procedure} — case imagery`}
                     loading="lazy"
                     className="size-full object-cover transition-transform duration-[1.4s] ease-[cubic-bezier(0.16,1,0.3,1)] group-hover:scale-105"
                   />
-                  <span className="absolute inset-0 bg-charcoal/0 transition-colors duration-700 group-hover:bg-charcoal/20" />
+                  <span className="absolute inset-0 bg-brown/0 transition-colors duration-700 group-hover:bg-brown/20" />
                 </div>
                 <span className="eyebrow mt-5 block">{c.category}</span>
                 <h2 className="mt-2 text-xl">{c.procedure}</h2>
@@ -93,7 +93,7 @@ function GalleryPage() {
       </Section>
 
       <Dialog open={!!active} onOpenChange={(o) => !o && setActive(null)}>
-        <DialogContent className="max-w-3xl rounded-none border-border bg-ivory p-0">
+        <DialogContent className="max-w-3xl rounded-none border-border bg-cream p-0">
           {active ? (
             <div className="grid md:grid-cols-[1.1fr_0.9fr]">
               <img

@@ -6,7 +6,7 @@
 
 /*
  * Design system — luxury aesthetic clinic.
- * Warm-neutral editorial palette: ivory, sand, blush, charcoal, champagne gold.
+ * Warm palette: white, cream, gold, brown.
  * All colors use oklch. Never hardcode colors in components.
  */
 
@@ -38,13 +38,11 @@
   --color-input: var(--input);
   --color-ring: var(--ring);
   --color-ring-offset-background: var(--background);
-  --color-ivory: var(--ivory);
-  --color-sand: var(--sand);
-  --color-beige: var(--beige);
-  --color-blush: var(--blush);
-  --color-charcoal: var(--charcoal);
-  --color-stone: var(--stone);
+  --color-white: var(--white);
+  --color-cream: var(--cream);
   --color-gold: var(--gold);
+  --color-brown: var(--brown);
+  --color-light-brown: var(--light-brown);
   --font-display: "Cormorant Garamond", "Times New Roman", serif;
   --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
   --color-sidebar: var(--sidebar);
@@ -60,59 +58,57 @@
 :root {
   --radius: 0.125rem;
 
-  --ivory: oklch(0.966 0.008 85);
-  --sand: oklch(0.928 0.014 85);
-  --beige: oklch(0.845 0.022 70);
-  --blush: oklch(0.815 0.032 10);
-  --charcoal: oklch(0.24 0.005 80);
-  --stone: oklch(0.53 0.008 75);
-  --gold: oklch(0.68 0.055 80);
+  --white: oklch(0.998 0.001 90);
+  --cream: oklch(0.955 0.018 80);
+  --gold: oklch(0.74 0.10 80);
+  --brown: oklch(0.32 0.03 55);
+  --light-brown: oklch(0.58 0.025 65);
 
-  --background: var(--ivory);
-  --foreground: var(--charcoal);
-  --card: oklch(1 0 0);
-  --card-foreground: var(--charcoal);
-  --popover: var(--ivory);
-  --popover-foreground: var(--charcoal);
-  --primary: var(--charcoal);
-  --primary-foreground: var(--ivory);
-  --secondary: var(--sand);
-  --secondary-foreground: var(--charcoal);
-  --muted: var(--sand);
-  --muted-foreground: var(--stone);
+  --background: var(--cream);
+  --foreground: var(--brown);
+  --card: var(--white);
+  --card-foreground: var(--brown);
+  --popover: var(--cream);
+  --popover-foreground: var(--brown);
+  --primary: var(--brown);
+  --primary-foreground: var(--white);
+  --secondary: var(--white);
+  --secondary-foreground: var(--brown);
+  --muted: var(--white);
+  --muted-foreground: var(--light-brown);
   --accent: var(--gold);
   --accent-foreground: oklch(1 0 0);
   --destructive: oklch(0.55 0.16 25);
   --destructive-foreground: oklch(0.99 0 0);
-  --border: oklch(0.88 0.012 80);
-  --input: oklch(0.86 0.012 80);
+  --border: oklch(0.88 0.015 70);
+  --input: oklch(0.86 0.015 70);
   --ring: var(--gold);
 
-  --sidebar: var(--sand);
-  --sidebar-foreground: var(--charcoal);
-  --sidebar-primary: var(--charcoal);
-  --sidebar-primary-foreground: var(--ivory);
-  --sidebar-accent: var(--beige);
-  --sidebar-accent-foreground: var(--charcoal);
-  --sidebar-border: oklch(0.88 0.012 80);
+  --sidebar: var(--cream);
+  --sidebar-foreground: var(--brown);
+  --sidebar-primary: var(--brown);
+  --sidebar-primary-foreground: var(--white);
+  --sidebar-accent: var(--white);
+  --sidebar-accent-foreground: var(--brown);
+  --sidebar-border: oklch(0.88 0.015 70);
   --sidebar-ring: var(--gold);
 }
 
 .dark {
-  --background: var(--charcoal);
-  --foreground: var(--ivory);
-  --card: oklch(0.28 0.005 80);
-  --card-foreground: var(--ivory);
-  --popover: oklch(0.28 0.005 80);
-  --popover-foreground: var(--ivory);
-  --primary: var(--ivory);
-  --primary-foreground: var(--charcoal);
-  --secondary: oklch(0.32 0.006 80);
-  --secondary-foreground: var(--ivory);
-  --muted: oklch(0.32 0.006 80);
-  --muted-foreground: oklch(0.72 0.008 80);
+  --background: var(--brown);
+  --foreground: var(--cream);
+  --card: oklch(0.28 0.025 55);
+  --card-foreground: var(--cream);
+  --popover: oklch(0.28 0.025 55);
+  --popover-foreground: var(--cream);
+  --primary: var(--cream);
+  --primary-foreground: var(--brown);
+  --secondary: oklch(0.30 0.025 55);
+  --secondary-foreground: var(--cream);
+  --muted: oklch(0.30 0.025 55);
+  --muted-foreground: oklch(0.68 0.02 65);
   --accent: var(--gold);
-  --accent-foreground: var(--charcoal);
+  --accent-foreground: var(--brown);
   --border: oklch(1 0 0 / 12%);
   --input: oklch(1 0 0 / 16%);
   --ring: var(--gold);
@@ -162,7 +158,7 @@
   letter-spacing: 0.28em;
   text-transform: uppercase;
   font-weight: 400;
-  color: var(--stone);
+  color: var(--light-brown);
 }
 
 @utility rule-gold {

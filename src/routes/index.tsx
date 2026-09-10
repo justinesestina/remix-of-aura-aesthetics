@@ -36,7 +36,7 @@ export const Route = createFileRoute("/")({
 function Hero() {
   const parallax = useParallax<HTMLImageElement>(50);
   return (
-    <section className="relative overflow-hidden bg-ivory pt-36 md:pt-44">
+    <section className="relative overflow-hidden bg-cream pt-36 md:pt-44">
       <div className="mx-auto grid w-full max-w-[92rem] items-end gap-14 px-6 pb-20 md:px-10 lg:grid-cols-[1.05fr_0.95fr] lg:gap-20 lg:px-14 lg:pb-28">
         <div>
           <Reveal>
@@ -45,7 +45,7 @@ function Hero() {
           <Reveal delay={80}>
             <h1 className="mt-8 text-[clamp(2.8rem,7.4vw,6.4rem)] leading-[0.98] tracking-[-0.02em] text-balance">
               Surgical precision,
-              <span className="block italic text-stone">quietly considered.</span>
+              <span className="block italic text-light-brown">quietly considered.</span>
             </h1>
           </Reveal>
           <Reveal delay={160}>
@@ -64,7 +64,7 @@ function Hero() {
         </div>
 
         <Reveal variant="clip" delay={120} className="relative">
-          <div className="relative aspect-[4/5] overflow-hidden bg-sand">
+          <div className="relative aspect-[4/5] overflow-hidden bg-white">
             <img
               ref={parallax}
               src={images.heroPortrait}
@@ -73,14 +73,14 @@ function Hero() {
               loading="eager"
             />
           </div>
-          <div className="absolute -left-4 bottom-8 hidden bg-ivory px-8 py-6 md:block lg:-left-16">
+          <div className="absolute -left-4 bottom-8 hidden bg-cream px-8 py-6 md:block lg:-left-16">
             <p className="font-display text-4xl leading-none">18+</p>
             <p className="eyebrow mt-3">Years of practice</p>
           </div>
         </Reveal>
       </div>
 
-      <div className="overflow-hidden border-y border-border bg-sand py-5">
+      <div className="overflow-hidden border-y border-border bg-white py-5">
         <ul className="no-scrollbar flex gap-14 overflow-x-auto px-6 md:justify-center md:px-10">
           {credentials.map((c) => (
             <li key={c} className="eyebrow whitespace-nowrap">
@@ -95,7 +95,7 @@ function Hero() {
 
 function Philosophy() {
   return (
-    <Section className="bg-ivory">
+    <Section className="bg-cream">
       <div className="grid gap-16 lg:grid-cols-[0.85fr_1.15fr]">
         <SectionHeading
           eyebrow="Philosophy"
@@ -103,7 +103,7 @@ function Philosophy() {
           title={
             <>
               Care shaped around
-              <span className="italic text-stone"> the individual</span>
+              <span className="italic text-light-brown"> the individual</span>
             </>
           }
           intro="Four principles guide every consultation, every plan and every stage of recovery."
@@ -125,7 +125,7 @@ function Philosophy() {
 function ProceduresPreview() {
   const featured = categories.map((c) => procedures.find((p) => p.category === c)!).filter(Boolean);
   return (
-    <Section className="bg-sand">
+    <Section className="bg-white">
       <div className="flex flex-wrap items-end justify-between gap-8">
         <SectionHeading
           eyebrow="Procedures"
@@ -133,7 +133,7 @@ function ProceduresPreview() {
           title={
             <>
               A focused range,
-              <span className="italic text-stone"> practised often</span>
+              <span className="italic text-light-brown"> practised often</span>
             </>
           }
         />
@@ -148,7 +148,7 @@ function ProceduresPreview() {
         {featured.map((p, i) => (
           <Reveal key={p.slug} delay={i * 80} className={i % 2 === 1 ? "lg:mt-16" : ""}>
             <Link to="/procedures/$slug" params={{ slug: p.slug }} className="group block">
-              <div className="relative aspect-[3/4] overflow-hidden bg-beige">
+              <div className="relative aspect-[3/4] overflow-hidden bg-cream">
                 <img
                   src={p.image}
                   alt={`${p.category} procedures — ${p.name}`}
@@ -175,10 +175,10 @@ function ProceduresPreview() {
 
 function SurgeonFeature() {
   return (
-    <Section className="bg-charcoal text-ivory">
+    <Section className="bg-brown text-cream">
       <div className="grid items-center gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
         <Reveal variant="clip">
-          <div className="aspect-[4/5] overflow-hidden bg-stone">
+          <div className="aspect-[4/5] overflow-hidden bg-light-brown">
             <img
               src={images.surgeonPortrait}
               alt={`Portrait of ${clinic.surgeon.name}`}
@@ -189,20 +189,20 @@ function SurgeonFeature() {
         </Reveal>
         <div>
           <Reveal>
-            <Eyebrow className="text-ivory/50">The Surgeon</Eyebrow>
+            <Eyebrow className="text-cream/50">The Surgeon</Eyebrow>
             <h2 className="mt-7 text-[clamp(2rem,4.4vw,3.4rem)] leading-[1.08]">
               {clinic.surgeon.name}
-              <span className="mt-3 block text-lg italic tracking-wide text-ivory/60">
+              <span className="mt-3 block text-lg italic tracking-wide text-cream/60">
                 {clinic.surgeon.specialty}
               </span>
             </h2>
-            <p className="mt-8 max-w-lg text-[0.95rem] leading-[1.95] text-ivory/65">
+            <p className="mt-8 max-w-lg text-[0.95rem] leading-[1.95] text-cream/65">
               Practice is built on unhurried consultation and conservative, individually planned
               surgery. Suitability is always determined in consultation, and the reasons not to
               proceed are discussed as openly as the reasons to.
             </p>
           </Reveal>
-          <div className="mt-10 grid gap-x-10 gap-y-6 border-t border-ivory/15 pt-8 sm:grid-cols-2">
+          <div className="mt-10 grid gap-x-10 gap-y-6 border-t border-cream/15 pt-8 sm:grid-cols-2">
             {[
               { k: "Certification", v: clinic.surgeon.credentials },
               { k: "Education", v: clinic.surgeon.education },
@@ -210,8 +210,8 @@ function SurgeonFeature() {
               { k: "Facility", v: "Accredited surgical facility" },
             ].map((row, i) => (
               <Reveal key={row.k} delay={i * 70}>
-                <p className="eyebrow text-ivory/45">{row.k}</p>
-                <p className="mt-2 text-sm text-ivory/80">{row.v}</p>
+                <p className="eyebrow text-cream/45">{row.k}</p>
+                <p className="mt-2 text-sm text-cream/80">{row.v}</p>
               </Reveal>
             ))}
           </div>
@@ -228,21 +228,21 @@ function SurgeonFeature() {
 
 function CarePath() {
   return (
-    <Section className="bg-ivory">
+    <Section className="bg-cream">
       <SectionHeading
         eyebrow="Patient Journey"
         index="03"
         title={
           <>
             Five stages,
-            <span className="italic text-stone"> clearly explained</span>
+            <span className="italic text-light-brown"> clearly explained</span>
           </>
         }
       />
       <ol className="mt-16 grid gap-px overflow-hidden border border-border bg-border md:grid-cols-2 lg:grid-cols-5">
         {carePath.map((s, i) => (
-          <Reveal key={s.step} delay={i * 70} as="li" className="group bg-ivory p-8 transition-colors duration-700 hover:bg-sand">
-            <span className="font-display text-3xl text-beige transition-colors duration-700 group-hover:text-gold">
+          <Reveal key={s.step} delay={i * 70} as="li" className="group bg-cream p-8 transition-colors duration-700 hover:bg-white">
+            <span className="font-display text-3xl text-cream transition-colors duration-700 group-hover:text-gold">
               {s.step}
             </span>
             <h3 className="mt-6 text-xl leading-tight">{s.title}</h3>
@@ -256,7 +256,7 @@ function CarePath() {
 
 function GalleryTeaser() {
   return (
-    <Section className="bg-sand">
+    <Section className="bg-white">
       <div className="flex flex-wrap items-end justify-between gap-8">
         <SectionHeading
           eyebrow="Results"
@@ -264,7 +264,7 @@ function GalleryTeaser() {
           title={
             <>
               A record of
-              <span className="italic text-stone"> considered outcomes</span>
+              <span className="italic text-light-brown"> considered outcomes</span>
             </>
           }
         />
@@ -277,7 +277,7 @@ function GalleryTeaser() {
       <div className="mt-14 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {galleryCases.slice(0, 3).map((c, i) => (
           <Reveal key={c.id} variant="clip" delay={i * 90}>
-            <div className={`overflow-hidden bg-beige ${i === 1 ? "aspect-[3/4] lg:mt-12" : "aspect-[4/5]"}`}>
+            <div className={`overflow-hidden bg-cream ${i === 1 ? "aspect-[3/4] lg:mt-12" : "aspect-[4/5]"}`}>
               <img src={c.image} alt={`${c.procedure} case study`} loading="lazy" className="size-full object-cover" />
             </div>
             <p className="eyebrow mt-5">{c.procedure}</p>
@@ -293,12 +293,12 @@ function GalleryTeaser() {
 
 function Voices() {
   return (
-    <Section className="bg-ivory">
+    <Section className="bg-cream">
       <SectionHeading eyebrow="Patient Voices" index="05" align="center" title="In their words" />
       <div className="mt-16 grid gap-x-12 gap-y-14 md:grid-cols-2">
         {testimonials.slice(0, 4).map((t, i) => (
           <Reveal key={t.initials} delay={i * 80} className="border-t border-border pt-8">
-            <p className="font-display text-[1.5rem] leading-[1.55] text-charcoal">“{t.quote}”</p>
+            <p className="font-display text-[1.5rem] leading-[1.55] text-brown">“{t.quote}”</p>
             <p className="eyebrow mt-6">
               {t.initials} — {t.procedure}
             </p>
@@ -316,7 +316,7 @@ function Voices() {
 
 function Journal() {
   return (
-    <Section className="bg-sand">
+    <Section className="bg-white">
       <div className="flex flex-wrap items-end justify-between gap-8">
         <SectionHeading eyebrow="Journal" index="06" title="Notes & patient guides" />
         <Reveal>
@@ -329,7 +329,7 @@ function Journal() {
         {posts.slice(0, 3).map((p, i) => (
           <Reveal key={p.slug} delay={i * 80}>
             <Link to="/resources/$slug" params={{ slug: p.slug }} className="group block">
-              <div className="aspect-[16/11] overflow-hidden bg-beige">
+              <div className="aspect-[16/11] overflow-hidden bg-cream">
                 <img
                   src={p.image}
                   alt={p.title}
@@ -359,15 +359,15 @@ function ClosingCta() {
         loading="lazy"
         className="absolute inset-0 size-full object-cover"
       />
-      <div className="absolute inset-0 bg-charcoal/70" />
-      <div className="relative mx-auto w-full max-w-[86rem] px-6 py-32 text-ivory md:px-10 md:py-44 lg:px-16">
+      <div className="absolute inset-0 bg-brown/70" />
+      <div className="relative mx-auto w-full max-w-[86rem] px-6 py-32 text-cream md:px-10 md:py-44 lg:px-16">
         <Reveal className="max-w-2xl">
-          <Eyebrow className="text-ivory/60">Consultation</Eyebrow>
+          <Eyebrow className="text-cream/60">Consultation</Eyebrow>
           <h2 className="mt-7 text-[clamp(2.2rem,5.4vw,4.2rem)] leading-[1.05]">
             Begin with a conversation,
-            <span className="italic text-ivory/70"> not a decision.</span>
+            <span className="italic text-cream/70"> not a decision.</span>
           </h2>
-          <p className="mt-7 max-w-lg text-[0.95rem] leading-[1.95] text-ivory/70">
+          <p className="mt-7 max-w-lg text-[0.95rem] leading-[1.95] text-cream/70">
             Consultations are private, unhurried and without obligation. Every procedure has
             potential risks and considerations; suitability is determined in consultation.
           </p>

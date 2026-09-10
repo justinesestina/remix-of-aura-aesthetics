@@ -46,13 +46,13 @@ function ProceduresPage() {
         title={
           <>
             A focused range,
-            <span className="italic text-stone"> individually planned</span>
+            <span className="italic text-light-brown"> individually planned</span>
           </>
         }
         intro="Every procedure below is planned around anatomy, medical history and personal goals. Suitability is determined during consultation."
       />
 
-      <Section className="bg-ivory">
+      <Section className="bg-cream">
         <Reveal className="flex flex-wrap items-center gap-3 border-b border-border pb-8">
           <Link
             to="/procedures"
@@ -60,8 +60,8 @@ function ProceduresPage() {
             className={cn(
               "border px-6 py-3 text-[0.68rem] uppercase tracking-[0.2em] transition-colors duration-500",
               !category
-                ? "border-charcoal bg-charcoal text-ivory"
-                : "border-border text-muted-foreground hover:border-charcoal hover:text-charcoal",
+                ? "border-brown bg-brown text-cream"
+                : "border-border text-muted-foreground hover:border-brown hover:text-brown",
             )}
           >
             All
@@ -74,8 +74,8 @@ function ProceduresPage() {
               className={cn(
                 "border px-6 py-3 text-[0.68rem] uppercase tracking-[0.2em] transition-colors duration-500",
                 category === c
-                  ? "border-charcoal bg-charcoal text-ivory"
-                  : "border-border text-muted-foreground hover:border-charcoal hover:text-charcoal",
+                  ? "border-brown bg-brown text-cream"
+                  : "border-border text-muted-foreground hover:border-brown hover:text-brown",
               )}
             >
               {c}
@@ -87,7 +87,7 @@ function ProceduresPage() {
           {list.map((p, i) => (
             <Reveal key={p.slug} delay={(i % 3) * 80} className={i % 3 === 1 ? "lg:mt-14" : ""}>
               <Link to="/procedures/$slug" params={{ slug: p.slug }} className="group block">
-                <div className="aspect-[4/5] overflow-hidden bg-beige">
+                <div className="aspect-[4/5] overflow-hidden bg-cream">
                   <img
                     src={p.image}
                     alt={`${p.name} — ${p.category} procedure`}

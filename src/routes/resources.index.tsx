@@ -41,13 +41,13 @@ function ResourcesPage() {
         title={
           <>
             Guides, notes and
-            <span className="italic text-stone"> clinic writing</span>
+            <span className="italic text-light-brown"> clinic writing</span>
           </>
         }
         intro="Plain-language reading on consultation, recovery and aesthetic planning."
       />
 
-      <Section className="bg-ivory">
+      <Section className="bg-cream">
         <Reveal className="flex flex-wrap gap-3 border-b border-border pb-8">
           {["All", ...postCategories].map((c) => (
             <ActionButton
@@ -57,7 +57,7 @@ function ResourcesPage() {
               aria-pressed={cat === c}
               className={cn(
                 "px-6 py-3 hover:px-6",
-                cat === c && "border-charcoal bg-charcoal text-ivory",
+                cat === c && "border-brown bg-brown text-cream",
               )}
             >
               {c}
@@ -72,7 +72,7 @@ function ResourcesPage() {
               params={{ slug: lead.slug }}
               className="group grid gap-10 lg:grid-cols-[1.1fr_0.9fr] lg:items-center"
             >
-              <div className="aspect-[16/10] overflow-hidden bg-beige">
+              <div className="aspect-[16/10] overflow-hidden bg-cream">
                 <img
                   src={lead.image}
                   alt={lead.title}
@@ -99,7 +99,7 @@ function ResourcesPage() {
           {rest.map((p, i) => (
             <Reveal key={p.slug} delay={(i % 3) * 80}>
               <Link to="/resources/$slug" params={{ slug: p.slug }} className="group block">
-                <div className="aspect-[4/3] overflow-hidden bg-beige">
+                <div className="aspect-[4/3] overflow-hidden bg-cream">
                   <img
                     src={p.image}
                     alt={p.title}
@@ -118,7 +118,7 @@ function ResourcesPage() {
         </div>
       </Section>
 
-      <Section className="bg-sand">
+      <Section className="bg-white">
         <div className="grid gap-14 lg:grid-cols-[0.85fr_1.15fr] lg:gap-24">
           <SectionHeading eyebrow="FAQ" title="Common questions" />
           <Reveal>

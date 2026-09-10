@@ -40,7 +40,7 @@ export const Route = createFileRoute("/procedures/$slug")({
 
 function ProcedureNotFound() {
   return (
-    <Section className="bg-ivory pt-48">
+    <Section className="bg-cream pt-48">
       <h1 className="text-4xl">Procedure not found</h1>
       <p className="mt-5 text-sm text-muted-foreground">
         This procedure page is unavailable or has moved.
@@ -69,7 +69,7 @@ function ProcedureDetail() {
 
   return (
     <>
-      <header className="border-b border-border bg-sand px-6 pb-16 pt-36 md:px-10 md:pt-44 lg:px-16">
+      <header className="border-b border-border bg-white px-6 pb-16 pt-36 md:px-10 md:pt-44 lg:px-16">
         <div className="mx-auto w-full max-w-[86rem]">
           <Reveal>
             <nav aria-label="Breadcrumb" className="eyebrow flex flex-wrap gap-2">
@@ -81,7 +81,7 @@ function ProcedureDetail() {
                 Procedures
               </Link>
               <span aria-hidden>/</span>
-              <span className="text-charcoal">{procedure.name}</span>
+              <span className="text-brown">{procedure.name}</span>
             </nav>
           </Reveal>
           <div className="mt-10 grid items-end gap-12 lg:grid-cols-[1.05fr_0.95fr]">
@@ -103,7 +103,7 @@ function ProcedureDetail() {
               </div>
             </Reveal>
             <Reveal variant="clip" delay={140}>
-              <div className="aspect-[5/4] overflow-hidden bg-beige">
+              <div className="aspect-[5/4] overflow-hidden bg-cream">
                 <img
                   src={procedure.image}
                   alt={`${procedure.name} procedure imagery`}
@@ -115,7 +115,7 @@ function ProcedureDetail() {
         </div>
       </header>
 
-      <Section className="bg-ivory">
+      <Section className="bg-cream">
         <div className="grid gap-16 lg:grid-cols-[1.15fr_0.85fr] lg:gap-24">
           <div>
             <Reveal>
@@ -164,7 +164,7 @@ function ProcedureDetail() {
           </div>
 
           <aside className="lg:sticky lg:top-32 lg:self-start">
-            <Reveal className="border border-border bg-sand p-9">
+            <Reveal className="border border-border bg-white p-9">
               <Eyebrow>At a glance</Eyebrow>
               <dl className="mt-7 space-y-5 text-sm">
                 <div>
@@ -201,13 +201,13 @@ function ProcedureDetail() {
       </Section>
 
       {related.length > 0 ? (
-        <Section className="bg-sand">
+        <Section className="bg-white">
           <Eyebrow>Related — {procedure.category}</Eyebrow>
           <div className="mt-10 grid gap-10 md:grid-cols-3">
             {related.map((p, i) => (
               <Reveal key={p.slug} delay={i * 80}>
                 <Link to="/procedures/$slug" params={{ slug: p.slug }} className="group block">
-                  <div className="aspect-[4/3] overflow-hidden bg-beige">
+                  <div className="aspect-[4/3] overflow-hidden bg-cream">
                     <img
                       src={p.image}
                       alt={p.name}

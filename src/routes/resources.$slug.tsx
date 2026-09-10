@@ -44,7 +44,7 @@ export const Route = createFileRoute("/resources/$slug")({
 
 function PostNotFound() {
   return (
-    <Section className="bg-ivory pt-48">
+    <Section className="bg-cream pt-48">
       <h1 className="text-4xl">Article not found</h1>
       <p className="mt-5 text-sm text-muted-foreground">This article is unavailable or has moved.</p>
       <div className="mt-9">
@@ -62,7 +62,7 @@ function PostDetail() {
 
   return (
     <>
-      <header className="border-b border-border bg-sand px-6 pb-16 pt-36 md:px-10 md:pt-44 lg:px-16">
+      <header className="border-b border-border bg-white px-6 pb-16 pt-36 md:px-10 md:pt-44 lg:px-16">
         <div className="mx-auto w-full max-w-[60rem]">
           <Reveal>
             <nav aria-label="Breadcrumb" className="eyebrow flex flex-wrap gap-2">
@@ -74,7 +74,7 @@ function PostDetail() {
                 Journal
               </Link>
               <span aria-hidden>/</span>
-              <span className="text-charcoal">{post.category}</span>
+              <span className="text-brown">{post.category}</span>
             </nav>
             <Eyebrow className="mt-9">
               {post.category} — {post.date}
@@ -88,13 +88,13 @@ function PostDetail() {
         </div>
       </header>
 
-      <Reveal variant="clip" className="bg-ivory px-6 pt-16 md:px-10 lg:px-16">
-        <div className="mx-auto aspect-[16/9] w-full max-w-[72rem] overflow-hidden bg-beige">
+      <Reveal variant="clip" className="bg-cream px-6 pt-16 md:px-10 lg:px-16">
+        <div className="mx-auto aspect-[16/9] w-full max-w-[72rem] overflow-hidden bg-cream">
           <img src={post.image} alt={post.title} className="size-full object-cover" />
         </div>
       </Reveal>
 
-      <Section className="bg-ivory">
+      <Section className="bg-cream">
         <div className="mx-auto max-w-[44rem]">
           {post.body.map((section, i) => (
             <Reveal key={section.heading} delay={i * 60} className="mt-12 first:mt-0">
@@ -120,13 +120,13 @@ function PostDetail() {
         </div>
       </Section>
 
-      <Section className="bg-sand">
+      <Section className="bg-white">
         <Eyebrow>Continue reading</Eyebrow>
         <div className="mt-10 grid gap-10 md:grid-cols-2">
           {more.map((p, i) => (
             <Reveal key={p.slug} delay={i * 80}>
               <Link to="/resources/$slug" params={{ slug: p.slug }} className="group block">
-                <div className="aspect-[16/10] overflow-hidden bg-beige">
+                <div className="aspect-[16/10] overflow-hidden bg-cream">
                   <img
                     src={p.image}
                     alt={p.title}

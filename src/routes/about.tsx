@@ -29,13 +29,13 @@ function AboutPage() {
         title={
           <>
             A private practice built on
-            <span className="italic text-stone"> conversation</span>
+            <span className="italic text-light-brown"> conversation</span>
           </>
         }
         intro="Consultation-led care, conservative planning and aftercare that continues the same conversation."
       />
 
-      <Section className="bg-ivory">
+      <Section className="bg-cream">
         <div className="grid gap-14 lg:grid-cols-[1.1fr_0.9fr] lg:gap-24">
           <div>
             <Reveal>
@@ -43,7 +43,7 @@ function AboutPage() {
               <h2 className="mt-7 text-[clamp(2rem,4.2vw,3.2rem)] leading-[1.08]">
                 {clinic.surgeon.name}
               </h2>
-              <p className="mt-3 text-lg italic text-stone">{clinic.surgeon.specialty}</p>
+              <p className="mt-3 text-lg italic text-light-brown">{clinic.surgeon.specialty}</p>
             </Reveal>
             <div className="mt-9 space-y-6 text-[0.95rem] leading-[1.95] text-muted-foreground">
               <Reveal delay={60} as="p">
@@ -76,7 +76,7 @@ function AboutPage() {
           </div>
 
           <Reveal variant="clip">
-            <div className="aspect-[4/5] overflow-hidden bg-sand lg:sticky lg:top-32">
+            <div className="aspect-[4/5] overflow-hidden bg-white lg:sticky lg:top-32">
               <img
                 src={images.surgeonPortrait}
                 alt={`Portrait of ${clinic.surgeon.name}`}
@@ -88,7 +88,7 @@ function AboutPage() {
         </div>
       </Section>
 
-      <Section className="bg-sand">
+      <Section className="bg-white">
         <SectionHeading
           eyebrow="Principles"
           title="How the practice works"
@@ -105,7 +105,7 @@ function AboutPage() {
         </div>
       </Section>
 
-      <Section className="bg-charcoal text-ivory">
+      <Section className="bg-brown text-cream">
         <div className="grid gap-14 lg:grid-cols-[0.9fr_1.1fr] lg:gap-24">
           <Reveal variant="clip">
             <div className="aspect-[4/3] overflow-hidden">
@@ -119,19 +119,19 @@ function AboutPage() {
           </Reveal>
           <div>
             <Reveal>
-              <Eyebrow className="text-ivory/50">The Clinic</Eyebrow>
+              <Eyebrow className="text-cream/50">The Clinic</Eyebrow>
               <h2 className="mt-7 text-[clamp(1.9rem,4vw,3rem)] leading-[1.1]">
                 A calm, private environment
               </h2>
-              <p className="mt-7 max-w-lg text-[0.95rem] leading-[1.95] text-ivory/65">
+              <p className="mt-7 max-w-lg text-[0.95rem] leading-[1.95] text-cream/65">
                 Consultation rooms are designed for privacy and unhurried conversation. Procedures
                 are carried out in an accredited facility with a consistent clinical team, and
                 aftercare is scheduled before anything is booked.
               </p>
             </Reveal>
-            <ul className="mt-10 grid gap-x-10 gap-y-4 border-t border-ivory/15 pt-8 sm:grid-cols-2">
+            <ul className="mt-10 grid gap-x-10 gap-y-4 border-t border-cream/15 pt-8 sm:grid-cols-2">
               {credentials.map((c, i) => (
-                <Reveal key={c} as="li" delay={i * 60} className="text-sm text-ivory/75">
+                <Reveal key={c} as="li" delay={i * 60} className="text-sm text-cream/75">
                   {c}
                 </Reveal>
               ))}
@@ -140,7 +140,7 @@ function AboutPage() {
         </div>
       </Section>
 
-      <Section className="bg-ivory">
+      <Section className="bg-cream">
         <SectionHeading eyebrow="Patient Journey" title="What to expect, stage by stage" />
         <ol className="mt-14 border-t border-border">
           {carePath.map((s, i) => (
@@ -150,7 +150,7 @@ function AboutPage() {
               delay={i * 60}
               className="group grid gap-4 border-b border-border py-8 md:grid-cols-[6rem_18rem_1fr] md:items-baseline"
             >
-              <span className="font-display text-2xl text-beige transition-colors duration-500 group-hover:text-gold">
+              <span className="font-display text-2xl text-cream transition-colors duration-500 group-hover:text-gold">
                 {s.step}
               </span>
               <h3 className="text-xl">{s.title}</h3>

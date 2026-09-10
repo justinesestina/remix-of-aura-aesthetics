@@ -32,7 +32,7 @@ export function Header() {
     <>
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:bg-charcoal focus:px-4 focus:py-2 focus:text-xs focus:uppercase focus:tracking-[0.2em] focus:text-ivory"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:bg-brown focus:px-4 focus:py-2 focus:text-xs focus:uppercase focus:tracking-[0.2em] focus:text-cream"
       >
         Skip to content
       </a>
@@ -40,14 +40,14 @@ export function Header() {
         className={cn(
           "fixed inset-x-0 top-0 z-50 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)]",
           scrolled
-            ? "border-b border-border bg-ivory/90 py-3 shadow-[0_1px_24px_-18px_oklch(0.24_0.005_80/0.6)] backdrop-blur-md"
+            ? "border-b border-border bg-cream/90 py-3 shadow-[0_1px_24px_-18px_oklch(0.32_0.03_55/0.6)] backdrop-blur-md"
             : "border-b border-transparent py-6",
         )}
       >
         <div className="mx-auto flex w-full max-w-[92rem] items-center justify-between gap-6 px-6 md:px-10 lg:px-14">
           <Link
             to="/"
-            className="font-display text-lg tracking-[0.32em] text-charcoal transition-opacity hover:opacity-70"
+            className="font-display text-lg tracking-[0.32em] text-brown transition-opacity hover:opacity-70"
             aria-label={`${clinic.shortName} — home`}
           >
             {clinic.name}
@@ -59,8 +59,8 @@ export function Header() {
                 key={link.to}
                 to={link.to}
                 activeOptions={{ exact: link.to === "/" }}
-                className="group relative py-1 text-[0.68rem] uppercase tracking-[0.2em] text-charcoal/80 transition-colors hover:text-charcoal"
-                activeProps={{ className: "text-charcoal" }}
+                className="group relative py-1 text-[0.68rem] uppercase tracking-[0.2em] text-brown/80 transition-colors hover:text-brown"
+                activeProps={{ className: "text-brown" }}
               >
                 {link.label}
                 <span
@@ -88,7 +88,7 @@ export function Header() {
             onClick={() => setOpen(true)}
             aria-label="Open menu"
             aria-expanded={open}
-            className="inline-flex size-11 items-center justify-center text-charcoal xl:hidden"
+            className="inline-flex size-11 items-center justify-center text-brown xl:hidden"
           >
             <Menu className="size-5" aria-hidden />
           </button>
@@ -102,7 +102,7 @@ export function Header() {
         aria-label="Site navigation"
         aria-hidden={!open}
         className={cn(
-          "fixed inset-0 z-[60] bg-ivory transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] xl:hidden",
+          "fixed inset-0 z-[60] bg-cream transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] xl:hidden",
           open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0",
         )}
       >
@@ -124,7 +124,7 @@ export function Header() {
               <Link
                 key={link.to}
                 to={link.to}
-                className="border-b border-border/70 py-4 font-display text-[2.1rem] leading-tight text-charcoal transition-colors hover:text-gold"
+                className="border-b border-border/70 py-4 font-display text-[2.1rem] leading-tight text-brown transition-colors hover:text-gold"
                 style={{ transitionDelay: `${i * 30}ms` }}
               >
                 {link.label}
