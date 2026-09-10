@@ -15,6 +15,7 @@ import { Route as ContactRouteImport } from './routes/contact'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as MedicalDisclaimerRouteImport } from './routes/medical-disclaimer'
 import { Route as PrivacyRouteImport } from './routes/privacy'
+import { Route as ServicesRouteImport } from './routes/services'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as TestimonialsRouteImport } from './routes/testimonials'
 import { Route as ProceduresIndexRouteImport } from './routes/procedures.index'
@@ -50,6 +51,11 @@ const MedicalDisclaimerRoute = MedicalDisclaimerRouteImport.update({
 const PrivacyRoute = PrivacyRouteImport.update({
   id: '/privacy',
   path: '/privacy',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ServicesRoute = ServicesRouteImport.update({
+  id: '/services',
+  path: '/services',
   getParentRoute: () => rootRouteImport,
 } as any)
 const TermsRoute = TermsRouteImport.update({
@@ -90,6 +96,7 @@ export interface FileRoutesByFullPath {
   '/gallery': typeof GalleryRoute
   '/medical-disclaimer': typeof MedicalDisclaimerRoute
   '/privacy': typeof PrivacyRoute
+  '/services': typeof ServicesRoute
   '/terms': typeof TermsRoute
   '/testimonials': typeof TestimonialsRoute
   '/procedures/$slug': typeof ProceduresSlugRoute
@@ -104,6 +111,7 @@ export interface FileRoutesByTo {
   '/gallery': typeof GalleryRoute
   '/medical-disclaimer': typeof MedicalDisclaimerRoute
   '/privacy': typeof PrivacyRoute
+  '/services': typeof ServicesRoute
   '/terms': typeof TermsRoute
   '/testimonials': typeof TestimonialsRoute
   '/procedures/$slug': typeof ProceduresSlugRoute
@@ -119,6 +127,7 @@ export interface FileRoutesById {
   '/gallery': typeof GalleryRoute
   '/medical-disclaimer': typeof MedicalDisclaimerRoute
   '/privacy': typeof PrivacyRoute
+  '/services': typeof ServicesRoute
   '/terms': typeof TermsRoute
   '/testimonials': typeof TestimonialsRoute
   '/procedures/$slug': typeof ProceduresSlugRoute
@@ -135,6 +144,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/medical-disclaimer'
     | '/privacy'
+    | '/services'
     | '/terms'
     | '/testimonials'
     | '/procedures/$slug'
@@ -149,6 +159,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/medical-disclaimer'
     | '/privacy'
+    | '/services'
     | '/terms'
     | '/testimonials'
     | '/procedures/$slug'
@@ -163,6 +174,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/medical-disclaimer'
     | '/privacy'
+    | '/services'
     | '/terms'
     | '/testimonials'
     | '/procedures/$slug'
@@ -178,6 +190,7 @@ export interface RootRouteChildren {
   GalleryRoute: typeof GalleryRoute
   MedicalDisclaimerRoute: typeof MedicalDisclaimerRoute
   PrivacyRoute: typeof PrivacyRoute
+  ServicesRoute: typeof ServicesRoute
   TermsRoute: typeof TermsRoute
   TestimonialsRoute: typeof TestimonialsRoute
   ProceduresSlugRoute: typeof ProceduresSlugRoute
@@ -228,6 +241,13 @@ declare module '@tanstack/react-router' {
       path: '/privacy'
       fullPath: '/privacy'
       preLoaderRoute: typeof PrivacyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/services': {
+      id: '/services'
+      path: '/services'
+      fullPath: '/services'
+      preLoaderRoute: typeof ServicesRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/terms': {
@@ -282,6 +302,7 @@ const rootRouteChildren: RootRouteChildren = {
   GalleryRoute: GalleryRoute,
   MedicalDisclaimerRoute: MedicalDisclaimerRoute,
   PrivacyRoute: PrivacyRoute,
+  ServicesRoute: ServicesRoute,
   TermsRoute: TermsRoute,
   TestimonialsRoute: TestimonialsRoute,
   ProceduresSlugRoute: ProceduresSlugRoute,

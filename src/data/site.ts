@@ -77,10 +77,8 @@ export const clinic = {
 export const navLinks = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
-  { label: "Procedures", to: "/procedures" },
-  { label: "Gallery", to: "/gallery" },
+  { label: "Services", to: "/services" },
   { label: "Testimonials", to: "/testimonials" },
-  { label: "Resources", to: "/resources" },
   { label: "Contact", to: "/contact" },
 ] as const;
 
