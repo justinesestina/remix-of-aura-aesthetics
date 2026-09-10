@@ -5,37 +5,60 @@ import procFace from "@/assets/procedure-face.jpg";
 import procBreast from "@/assets/procedure-breast.jpg";
 import procBody from "@/assets/procedure-body.jpg";
 import procNonSurgical from "@/assets/procedure-nonsurgical.jpg";
+import coverAsset from "@/assets/cover.png.asset.json";
+import doctorHeroAsset from "@/assets/doctor-hero.png.asset.json";
+import bannerAsset from "@/assets/image.png.asset.json";
+import servicesAsset from "@/assets/sevices.png.asset.json";
+import services1Asset from "@/assets/services1.png.asset.json";
+import services2Asset from "@/assets/services2.png.asset.json";
+import services3Asset from "@/assets/services3.png.asset.json";
+import services4Asset from "@/assets/services4.png.asset.json";
+import services5Asset from "@/assets/services5.png.asset.json";
 
 export const images = {
-  heroPortrait,
-  surgeonPortrait,
+  heroPortrait: doctorHeroAsset.url,
+  surgeonPortrait: coverAsset.url,
   clinicInterior,
+  doctorCutout: doctorHeroAsset.url,
+  doctorBanner: coverAsset.url,
+  profileBanner: bannerAsset.url,
+  signatureTreatments: servicesAsset.url,
   face: procFace,
   breast: procBreast,
   body: procBody,
   nonsurgical: procNonSurgical,
 };
 
-/* ------------------------------------------------------------------
- * All content below is placeholder content and is intended to be
- * replaced with real clinic-supplied copy, imagery and credentials.
- * ------------------------------------------------------------------ */
+export const treatmentPosters = [
+  { title: "Skin Boosters", image: services1Asset.url },
+  { title: "Botox Treatments", image: services2Asset.url },
+  { title: "Surgical Procedures", image: services3Asset.url },
+  { title: "Premium Skin Boosters", image: services4Asset.url },
+  { title: "Mesolipo", image: services5Asset.url },
+];
+
+export const clinicLocations = [
+  "Premier Drip",
+  "Idara",
+  "Aura Ruz",
+  "Queens Wellness",
+  "Prestige",
+  "Noah and Eve",
+];
 
 export const clinic = {
-  name: "MAISON AESTHETICA",
-  shortName: "Maison Aesthetica",
-  tagline: "Private Cosmetic Surgery & Aesthetic Care",
+  name: "DR. BRENT VICENTE",
+  shortName: "Dr. Brent Vicente",
+  tagline: "Doctor of Aesthetic Medicine & Cosmetic Surgery",
   description:
-    "A private practice for cosmetic surgery and aesthetic medicine, built around individual consultation, surgical precision and considered aftercare.",
-  phoneLabel: "+1 (000) 000-0000",
-  phoneHref: "tel:+10000000000",
-  email: "consultations@example-clinic.com",
-  addressLines: ["[Clinic Address Line 1]", "[Suite / Floor]", "[City, State ZIP]"],
+    "Beauty, health, lifestyle guidance and cosmetic care by the owner of Glowing Aesthetic and Wellness Center.",
+  phoneLabel: "0917 308 5712",
+  phoneHref: "tel:+639173085712",
+  email: "",
+  addressLines: ["Available by appointment", "Across six partner clinics"],
   hours: [
-    { day: "Monday – Thursday", time: "09:00 — 17:30" },
-    { day: "Friday", time: "09:00 — 16:00" },
-    { day: "Saturday", time: "By appointment" },
-    { day: "Sunday", time: "Closed" },
+    { day: "Daily", time: "10:00 AM — 9:00 PM" },
+    { day: "Consultations", time: "By appointment" },
   ],
   social: [
     { label: "Instagram", href: "#" },
@@ -43,11 +66,11 @@ export const clinic = {
     { label: "YouTube", href: "#" },
   ],
   surgeon: {
-    name: "Dr. [Surgeon Name]",
-    specialty: "Plastic & Reconstructive Surgery",
-    credentials: "[Board Certification Placeholder]",
-    education: "[Medical School Placeholder]",
-    memberships: ["[Professional Society A]", "[Professional Society B]"],
+    name: "Brent Vicente, MD",
+    specialty: "Aesthetic Medicine & Cosmetic Surgery",
+    credentials: "Doctor of Medicine",
+    education: "Aesthetic medicine and cosmetic surgery practice",
+    memberships: ["Glowing Aesthetic and Wellness Center"],
   },
 };
 
@@ -62,11 +85,11 @@ export const navLinks = [
 ] as const;
 
 export const credentials = [
-  "Board Certification",
-  "18+ Years of Experience",
-  "Professional Memberships",
-  "Accredited Facility",
-  "Patient-Centered Care",
+  "Expert Care",
+  "Safe & Trusted",
+  "Natural Results",
+  "Personalized Plans",
+  "Six Clinic Locations",
 ];
 
 export type Category = "Face" | "Breast" | "Body" | "Non-Surgical";
